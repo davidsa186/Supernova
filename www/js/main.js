@@ -18,11 +18,16 @@ var roca_ninos=["img/avatars/roca_nino/1.png","img/avatars/roca_nino/2.png","img
 		  	,"img/avatars/roca_nino/4.png","img/avatars/roca_nino/5.png","img/avatars/roca_nino/6.png"
 		  	,"img/avatars/roca_nino/7.png","img/avatars/roca_nino/8.png","img/avatars/roca_nino/9.png"];
 
+var naves_logros_nada=["img/logros/nave1.png","img/logros/nave2.png","img/logros/nave3.png"];
 
 window.onload = init;
 var seleccion;
 var cont;
 var avatar;
+var sexo;
+var sex;
+var roca;
+var cont_logros=0;
 
 function init()
 {
@@ -30,6 +35,7 @@ function init()
 	$('#seccion_nino').hide();
 	$('#seccion_nina').hide();
 	$('#seccion_menu').hide();
+	$('#seccion_logros').hide();
 
 
 	$('#btn_empezar_inicio').on('click',empezar_inicio);
@@ -39,11 +45,20 @@ function init()
 
 	$('#btn_siguiente_avatar_nino').on('click',cambiar_avatar);
 	$('#btn_volver_avatar_nino').on('click',cambiar_avatar);
+	$('#btn_siguiente_avatar_nina').on('click',cambiar_avatar);
+	$('#btn_volver_avatar_nina').on('click',cambiar_avatar);
 
-	$('#btn_siguiente_avatar_nina').on('click',siguiente_avatar_nina);
-	$('#btn_volver_avatar_nina').on('click',volver_avatar_nina);
-	$('#btn_empezar_nino').on('click',empezar_nino);
-	$('#btn_empezar_nina').on('click',empezar_nina);
+	$('#btn_empezar_nino').on('click',empezar);
+	$('#btn_empezar_nina').on('click',empezar);
+
+	$('#btn_inicio_menu').on('click',inicio);
+	$('#btn_logros_menu').on('click',logros);
+
+	$('#btn_inicio_logros').on('click',inicio);
+
+	$('#btn_logro_siguiente').on('click',galaxias_logros);
+	$('#btn_logro_volver').on('click',galaxias_logros);
+
 
 }
 function empezar_inicio(){
@@ -54,72 +69,107 @@ function seleccionarSexo(evt){
 	seleccion = evt.target.id;
 	$('#seccion_personajes').hide();
 	$('#seccion_'+seleccion).show();
-	cont=0;
 	avatar=seleccion=="nino";
+	cont=0;
+	if (avatar) {
+		sexo=ninos;
+		roca=roca_ninos;
+		sex="nino";	
+	}else{
+		sexo=ninas;
+		roca=roca_ninas;
+		sex="nina";
+	}
 }
 
 function cambiar_avatar(evt){
 	seleccion = evt.target.id;
 	if (seleccion=="btn_siguiente_avatar_nino") {
-		if (cont==ninos.length-1) {
-			cont=0;
-			cambiarImagen(cont);
-		}else{
-			cont++;
-			cambiarImagen(cont);
-		}
-	}else{
-		if (cont==0) {
-			cont=ninos.length-1;
-			cambiarImagen(cont);
-		}else{
-			cont--;
-			cambiarImagen(cont);
-		}
+		aumentoavatar();
+	}
+	if (seleccion=="btn_volver_avatar_nino") {
+		disminuyoavatar();
+	}	
+	if (seleccion=="btn_siguiente_avatar_nina") {
+		aumentoavatar();
+	}
+	if (seleccion=="btn_volver_avatar_nina") {
+		disminuyoavatar();
 	}	
 }
-function cambiarImagen(cont){
-	var imagen=ninos[cont];
-	$('#avatar_nino').attr("src",imagen);
-}
 
-
-
-function siguiente_avatar_nina(){
-	if (cont==ninas.length-1) {
+function aumentoavatar(){
+	if (cont==sexo.length-1) {
 		cont=0;
-		var imagen=ninas[cont];
-		$('#avatar_nina').attr("src",imagen);
-
+		cambiarImagen(cont,sexo);
 	}else{
 		cont++;
-		var imagen=ninas[cont];
-		$('#avatar_nina').attr("src",imagen);
+		cambiarImagen(cont,sexo);
 	}
 }
-function volver_avatar_nina(){
+function disminuyoavatar(){
 	if (cont==0) {
-		cont=ninas.length-1;
-		var imagen=ninas[cont];
-		$('#avatar_nina').attr("src",imagen);
-
+		cont=sexo.length-1;
+		cambiarImagen(cont,sexo);
 	}else{
 		cont--;
-		var imagen=ninas[cont];
-		$('#avatar_nina').attr("src",imagen);
+		cambiarImagen(cont,sexo);
 	}
 }
 
-function empezar_nino(){
+
+function cambiarImagen(cont,sexo){
+	var imagen=sexo[cont];
+	$('#avatar_'+sex).attr("src",imagen);
+}
+
+function empezar(evt){
+	seleccion=evt.target.id;
+	if (seleccion=="btn_empezar_nino") {
+		$("#nin_roca").attr("src",roca[cont]);
+	}else{
+		$("#nin_roca").attr("src",roca[cont]);
+	}
 	$('#seccion_menu').show();
-	$('#seccion_nino').hide();
-	console.log("nino");
+	$('#seccion_'+sex).hide();
 
 }
 
-function empezar_nina(){
+
+function inicio(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
 	$('#seccion_menu').show();
-	$('#seccion_nina').hide();
-	console.log("nina");
-	
+}
+function logros(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_logros').show();
+}
+
+function galaxias_logros(evt){
+	var btn=evt.target.id;
+	if (btn=="btn_logro_siguiente") {
+		if (cont_logros==naves_logros_nada.length-1) {
+			cont_logros=0;
+			cambiarImagenNave(cont_logros);
+		}else{
+			cont_logros++;
+			cambiarImagenNave(cont_logros);
+		}
+	}else{
+
+		if (cont_logros==0) {
+			cont_logros=naves_logros_nada.length-1;
+			cambiarImagenNave(cont_logros);
+		}else{
+			cont_logros--;
+			cambiarImagenNave(cont_logros);
+		}
+	}
+}
+
+function cambiarImagenNave(cont_logros){
+	var imagen=naves_logros_nada[cont_logros];
+	$('#img_logro').attr("src",imagen);
 }

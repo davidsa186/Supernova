@@ -43,3 +43,52 @@ body{
     left: 700px;
     top: 100px;
 }
+#msg_crear_personajes{
+    position: absolute;
+    left: 300px;
+    top: 600px;
+}
+
+/*seccion menu*/
+.btn_inicio{
+    position: absolute;
+    left: 43px;
+    top: 41px;
+}
+.btn_logros{
+    position: absolute;
+    left: 135px;
+    top: 41px;
+}
+#nin_roca   {
+    position: absolute;
+    left: 40px;
+    top: 450px;
+}
+#msg_inicio{
+    position: absolute;
+    left: 310px;
+    top: 430px;
+}
+
+/*seccion logros*/
+#msg_logro{
+    position: absolute;
+    left: 80px;
+    top: 200px;
+}
+#img_logro{
+    position: absolute;
+    left: 800px;
+    top: 50px;
+}
+#btn_logro_volver{
+    position: absolute;
+    left: 741px;
+    top: 400px;
+}
+#btn_logro_siguiente{
+    position: absolute;
+    left: 1215px;
+    top: 400px;
+}
