@@ -1,0 +1,45 @@
+.img{
+	width: 1280px;
+	height :800px;
+}
+body{
+	background-image: url(../img/fondo.jpg);
+	 background-size: 1280px 800px;
+	 background-repeat: no-repeat;
+}
+#logo{
+	position: absolute;
+    left: 580px;
+    top: 300px;
+}
+.btn_empezar_inicio{
+	position: absolute;
+    left: 600px;
+    top: 600px;
+}
+#nino{
+	position: absolute;
+    left: 200px;
+    top: 100px;
+}
+#nina{
+	position: absolute;
+    left: 700px;
+    top: 100px;
+}
+
+.volver_avatar{
+	position: absolute;
+    left: 300px;
+    top: 400px;
+}
+.siguiente_avatar{
+	position: absolute;
+    left: 900px;
+    top: 400px;
+}
+.avatar{
+	position: absolute;
+    left: 400px;
+    top: 100px;
+}
