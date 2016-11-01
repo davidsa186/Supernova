@@ -28,6 +28,8 @@ var sexo;
 var sex;
 var roca;
 var cont_logros=0;
+var cont_galaxia1=0;
+var cont_galaxia2=0;
 
 function init()
 {
@@ -36,7 +38,7 @@ function init()
 	$('#seccion_nina').hide();
 	$('#seccion_menu').hide();
 	$('#seccion_logros').hide();
-
+	$('#seccion_galaxia1').hide();
 
 	$('#btn_empezar_inicio').on('click',empezar_inicio);
 
@@ -59,7 +61,9 @@ function init()
 	$('#btn_logro_siguiente').on('click',galaxias_logros);
 	$('#btn_logro_volver').on('click',galaxias_logros);
 
-
+	$('#galaxia1').on('click',galaxia1);
+	$('#galaxia2').on('click',galaxia2);
+	$('#galaxia3').on('click',galaxia3);
 }
 function empezar_inicio(){
 	$('#seccion_inicio').hide();
@@ -172,4 +176,21 @@ function galaxias_logros(evt){
 function cambiarImagenNave(cont_logros){
 	var imagen=naves_logros_nada[cont_logros];
 	$('#img_logro').attr("src",imagen);
+}
+
+
+function galaxia1(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_galaxia1').show();
+}
+function galaxia2(){
+	if (!cont_galaxia1!=10) {
+		console.log("Complete Galaxia Neptuniana");
+	}
+}
+function galaxia3(){
+	if (cont_galaxia2!=10) {
+		console.log("Complete Galaxia Jupiter");
+	}
 }

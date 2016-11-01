@@ -70,6 +70,21 @@ body{
     left: 310px;
     top: 430px;
 }
+#galaxia1{
+    position: absolute;
+    left: 450px;
+    top: 10px;
+}
+#galaxia2{
+    position: absolute;
+    left: 870px;
+    top: 180px;
+}
+#galaxia3{
+    position: absolute;
+    left: 810px;
+    top: 470px;
+}
 
 /*seccion logros*/
 #msg_logro{
