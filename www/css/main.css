@@ -107,3 +107,68 @@ body{
     left: 1215px;
     top: 400px;
 }
+
+
+#logo_galaxia1{
+    position: absolute;
+    left: 450px;
+    top: 220px;
+}
+#empezar_galaxia1{
+    position: absolute;
+    left: 1100px;
+    top: 600px;
+}
+#planeta_nivel1{
+    position: absolute;
+    left: 90px;
+    top: 85px;
+}
+
+
+
+#planeta_nivel2{
+    position: absolute;
+    left: 440px;
+    top: 125px;
+}
+#planeta_nivel3{
+    position: absolute;
+    left: 830px;
+    top: 85px;
+}
+#planeta_nivel4{
+    position: absolute;
+    left: 1100px;
+    top: 280px;
+}
+#planeta_nivel5{
+    position: absolute;
+    left: 1110px;
+    top: 590px;
+}
+#planeta_nivel6{
+    position: absolute;
+    left: 730px;
+    top: 500px;
+}
+#planeta_nivel7{
+    position: absolute;
+    left: 370px;
+    top: 605px;
+}
+#planeta_nivel8{
+    position: absolute;
+    left: 180px;
+    top: 635px;
+}
+#perder{
+    position: absolute;
+    left: 280px;
+    top: 200px;
+}
+#volver_intentar{
+    position: absolute;
+    left: 1010px;
+    top: 600px;
+}

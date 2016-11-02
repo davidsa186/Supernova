@@ -39,6 +39,16 @@ function init()
 	$('#seccion_menu').hide();
 	$('#seccion_logros').hide();
 	$('#seccion_galaxia1').hide();
+	$('#seccion_mapa1_galaxia1').hide();
+	$('#seccion_mapa2_galaxia1').hide();
+	$('#seccion_mapa3_galaxia1').hide();
+	$('#seccion_mapa4_galaxia1').hide();
+	$('#seccion_mapa5_galaxia1').hide();
+	$('#seccion_mapa6_galaxia1').hide();
+	$('#seccion_mapa7_galaxia1').hide();
+	$('#seccion_mapa8_galaxia1').hide();
+	$('#seccion_perdido').hide();
+	
 
 	$('#btn_empezar_inicio').on('click',empezar_inicio);
 
@@ -64,6 +74,39 @@ function init()
 	$('#galaxia1').on('click',galaxia1);
 	$('#galaxia2').on('click',galaxia2);
 	$('#galaxia3').on('click',galaxia3);
+
+	$('#btn_inicio_galaxia1').on('click',inicio);
+	$('#btn_logros_galaxia1').on('click',logros);
+	$('#empezar_galaxia1').on('click',mapaGalaxia1);
+
+
+	$('#btn_inicio_mapa1').on('click',inicio);
+	$('#planeta_nivel1').on('click',empezarNivel1);
+	
+	$('#btn_inicio_mapa2').on('click',inicio);
+	$('#planeta_nivel2').on('click',empezarNivel2);
+
+	$('#btn_inicio_mapa3').on('click',inicio);
+	$('#planeta_nivel3').on('click',empezarNivel3);
+
+	$('#btn_inicio_mapa4').on('click',inicio);
+	$('#planeta_nivel4').on('click',empezarNivel4);
+
+	$('#btn_inicio_mapa5').on('click',inicio);
+	$('#planeta_nivel5').on('click',empezarNivel5);
+
+	$('#btn_inicio_mapa6').on('click',inicio);
+	$('#planeta_nivel6').on('click',empezarNivel6);
+
+	$('#btn_inicio_mapa7').on('click',inicio);
+	$('#planeta_nivel7').on('click',empezarNivel7);
+
+	$('#btn_inicio_mapa8').on('click',inicio);
+	$('#planeta_nivel8').on('click',empezarNivel8);
+
+
+	$('#btn_inicio_perdido').on('click',inicio);
+	$('#btn_logros_perdido').on('click',logros);
 }
 function empezar_inicio(){
 	$('#seccion_inicio').hide();
@@ -194,3 +237,60 @@ function galaxia3(){
 		console.log("Complete Galaxia Jupiter");
 	}
 }
+
+
+//-------------Inicio MARULANDA
+
+function mapaGalaxia1(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_mapa1_galaxia1').show();
+}
+function empezarNivel1(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_mapa2_galaxia1').show();
+}
+function empezarNivel2(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_mapa3_galaxia1').show();
+}
+function empezarNivel3(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_mapa4_galaxia1').show();
+}
+function empezarNivel4(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_mapa5_galaxia1').show();
+}
+function empezarNivel5(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_mapa6_galaxia1').show();
+}
+function empezarNivel6(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_mapa7_galaxia1').show();
+}
+function empezarNivel7(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_mapa8_galaxia1').show();
+}
+function empezarNivel8(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_perdido').show();
+}
+
+function perder(evt){
+	var seccion_actual=evt.target.parentNode.id;
+	$('#'+seccion_actual).hide();
+	$('#seccion_perdido').show();
+}
+
+//-------------Fin Marulanda
