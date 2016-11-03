@@ -181,19 +181,25 @@ body{
 }
 
 
-
+/*lvl 1*/
 #nave_lvl1{
     position: absolute;
     left: 10px;
-    top: 400px;
+    top: 600px;
 }
 #fondo_lvl1{
     position: absolute;
     left: 0px;
     top: 0px;
 }
+#planeta_lvl1{
+    position: absolute;
+    left: 910px;
+    top: 463px;
+}
 
 
+/*lvl 2*/
 
 #fondo_lvl2{
     position: absolute;
