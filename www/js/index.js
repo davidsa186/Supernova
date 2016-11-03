@@ -28,6 +28,23 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+         if( window.plugins && window.plugins.NativeAudio ) {
+
+            window.plugins.NativeAudio.preloadComplex( 'empezar', 'sounds/Inicio.mp3',1, 1, 0, function(msg){
+            }, function(msg){
+                console.log( 'error: ' + msg );
+            });
+            window.plugins.NativeAudio.preloadComplex( 'fondo', 'sounds/Fondo.mp3', 1, 1, 0, function(msg){
+            }, function(msg){
+                console.log( 'error: ' + msg );
+            });
+            window.plugins.NativeAudio.preloadSimple( 'click', 'sounds/Botones.mp3', function(msg){
+            }, function(msg){
+                console.log( 'error: ' + msg );
+            });
+            
+         
+         }
     },
 
     // Update DOM on a Received Event

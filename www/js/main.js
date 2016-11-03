@@ -33,8 +33,8 @@ var cont_galaxia2=0;
 
 function init()
 {
-	cargar_audios();
-
+	//cargar_audios();
+	cargarInicio();
 	$('#btn_empezar_inicio').on('click',empezar_inicio);
 
 	$('#nino').on('click',seleccionarSexo);
@@ -102,15 +102,17 @@ function init()
 		$('#btn_inicio_mapa'+i).on('click',inicio);
 	}
 
+	
+
 }
 function empezar_inicio(){
 
 	window.plugins.NativeAudio.stop( 'inicio' );
-	window.plugins.NativeAudio.unload( 'inicio' );
 	window.plugins.NativeAudio.loop( 'fondo' );
 	botonClick();
 	$('#seccion_inicio').hide();
 	$('#seccion_personajes').show();
+	window.plugins.NativeAudio.unload( 'inicio' );
 }
 function seleccionarSexo(evt){
 
@@ -313,14 +315,13 @@ function perder(evt){
 }
 
 
-function cargar_audios(){
+/*function cargar_audios(){
 	if( window.plugins && window.plugins.NativeAudio ) {
 
 		  window.plugins.NativeAudio.preloadComplex( 'fondo', 'sounds/Fondo.mp3', 1, 1, 0, function(msg){
 		    }, function(msg){
 		        console.log( 'error: ' + msg );
 		    });
-
 		    window.plugins.NativeAudio.preloadSimple( 'click', 'sounds/Botones.mp3', function(msg){
 		    }, function(msg){
 		        console.log( 'error: ' + msg );
@@ -329,9 +330,13 @@ function cargar_audios(){
 		    }, function(msg){
 		        console.log( 'error: ' + msg );
 		    });
+		 cargarInicio();
     }
-     window.plugins.NativeAudio.loop( 'inicio' );
-}
+     
+}*/
 function botonClick(){
 	window.plugins.NativeAudio.play( 'click' );
+}
+function cargarInicio(){
+	window.plugins.NativeAudio.loop( 'empezar' );
 }
