@@ -25,5 +25,6 @@
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="Fullscreen" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
     <preference name="Orientation" value="sensorLandscape" />
 </widget>
