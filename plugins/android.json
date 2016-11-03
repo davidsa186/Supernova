@@ -9,6 +9,9 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.supernova.upb"
+        },
+        "cordova-plugin-nativeaudio": {
+            "PACKAGE_NAME": "com.supernova.upb"
         }
     },
     "dependent_plugins": {}
