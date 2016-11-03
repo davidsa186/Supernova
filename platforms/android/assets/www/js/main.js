@@ -65,33 +65,43 @@ function init()
 	$('#empezar_galaxia1').on('click',mapaGalaxia1);
 
 
-	$('#btn_inicio_mapa1').on('click',inicio);
+	//$('#btn_inicio_mapa1').on('click',inicio);
 	$('#planeta_nivel1').on('click',empezarNivel1);
 	
-	$('#btn_inicio_mapa2').on('click',inicio);
-	$('#planeta_nivel2').on('click',empezarNivel2);
+	//$('#btn_inicio_mapa2').on('click',inicio);
+	$('#nave_lvl1').on('click',empezarNivel2);
 
-	$('#btn_inicio_mapa3').on('click',inicio);
-	$('#planeta_nivel3').on('click',empezarNivel3);
+	//$('#btn_inicio_mapa3').on('click',inicio);
+	$('#nave_lvl2').on('click',empezarNivel3);
 
-	$('#btn_inicio_mapa4').on('click',inicio);
+	//$('#btn_inicio_mapa4').on('click',inicio);
 	$('#planeta_nivel4').on('click',empezarNivel4);
 
-	$('#btn_inicio_mapa5').on('click',inicio);
+	//$('#btn_inicio_mapa5').on('click',inicio);
 	$('#planeta_nivel5').on('click',empezarNivel5);
 
-	$('#btn_inicio_mapa6').on('click',inicio);
+	//$('#btn_inicio_mapa6').on('click',inicio);
 	$('#planeta_nivel6').on('click',empezarNivel6);
 
-	$('#btn_inicio_mapa7').on('click',inicio);
+	//$('#btn_inicio_mapa7').on('click',inicio);
 	$('#planeta_nivel7').on('click',empezarNivel7);
 
-	$('#btn_inicio_mapa8').on('click',inicio);
+	//$('#btn_inicio_mapa8').on('click',inicio);
 	$('#planeta_nivel8').on('click',empezarNivel8);
 
 
 	$('#btn_inicio_perdido').on('click',inicio);
 	$('#btn_logros_perdido').on('click',logros);
+
+
+	var numBtn_ini = $('.btn_inicio').length
+	for (var i = 1; i <= 4; i++) {
+		$('#btn_inicio_lvl'+i).on('click',inicio);
+	}
+	for (var i = 1; i <=8; i++) {
+		$('#btn_inicio_mapa'+i).on('click',inicio);
+	}
+
 }
 function empezar_inicio(){
 
@@ -251,25 +261,25 @@ function empezarNivel1(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_mapa2_galaxia1').show();
+	$('#seccion_nivel1').show();
 }
 function empezarNivel2(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_mapa3_galaxia1').show();
+	$('#seccion_nivel2').show();
 }
 function empezarNivel3(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_mapa4_galaxia1').show();
+	$('#seccion_nivel3').show();
 }
 function empezarNivel4(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_mapa5_galaxia1').show();
+	$('#seccion_nivel4').show();
 }
 function empezarNivel5(evt){
 	botonClick();

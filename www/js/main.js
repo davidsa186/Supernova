@@ -33,7 +33,7 @@ var cont_galaxia2=0;
 
 function init()
 {
-	//cargar_audios();
+	cargar_audios();
 
 	$('#btn_empezar_inicio').on('click',empezar_inicio);
 
@@ -105,9 +105,9 @@ function init()
 }
 function empezar_inicio(){
 
-	/*window.plugins.NativeAudio.stop( 'inicio' );
+	window.plugins.NativeAudio.stop( 'inicio' );
 	window.plugins.NativeAudio.unload( 'inicio' );
-	window.plugins.NativeAudio.loop( 'fondo' );*/
+	window.plugins.NativeAudio.loop( 'fondo' );
 	botonClick();
 	$('#seccion_inicio').hide();
 	$('#seccion_personajes').show();
@@ -313,7 +313,7 @@ function perder(evt){
 }
 
 
-/*function cargar_audios(){
+function cargar_audios(){
 	if( window.plugins && window.plugins.NativeAudio ) {
 
 		  window.plugins.NativeAudio.preloadComplex( 'fondo', 'sounds/Fondo.mp3', 1, 1, 0, function(msg){
@@ -332,6 +332,6 @@ function perder(evt){
     }
      window.plugins.NativeAudio.loop( 'inicio' );
 }
-*/function botonClick(){
-	//window.plugins.NativeAudio.play( 'click' );
+function botonClick(){
+	window.plugins.NativeAudio.play( 'click' );
 }
