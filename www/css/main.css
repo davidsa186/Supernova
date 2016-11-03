@@ -179,3 +179,54 @@ body{
 .ocultar{
     display: none;
 }
+
+
+
+#nave_lvl1{
+    position: absolute;
+    left: 10px;
+    top: 400px;
+}
+#fondo_lvl1{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+
+
+#fondo_lvl2{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+#nave_lvl2{
+    position: absolute;
+    left: 140px;
+    top: 150px;
+}
+#marciano_lvl2{
+    position: absolute;
+    left: 560px;
+    top: 210px;
+}
+#maciano2_lvl2{
+    position: absolute;
+    left: 500px;
+    top: 550px;
+}
+#nave2_lvl2{
+    position: absolute;
+    left: 120px;
+    top: 470px;
+}
+#nino_lvl2{
+    position: absolute;
+    left: 900px;
+    top: 440px;
+}
+#planeta_lvl2{
+    position: absolute;
+    left: 1000px;
+    top: 200px;
+}

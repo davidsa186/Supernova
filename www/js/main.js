@@ -69,10 +69,10 @@ function init()
 	$('#planeta_nivel1').on('click',empezarNivel1);
 	
 	//$('#btn_inicio_mapa2').on('click',inicio);
-	$('#planeta_nivel2').on('click',empezarNivel2);
+	$('#nave_lvl1').on('click',empezarNivel2);
 
 	//$('#btn_inicio_mapa3').on('click',inicio);
-	$('#planeta_nivel3').on('click',empezarNivel3);
+	$('#nave_lvl2').on('click',empezarNivel3);
 
 	//$('#btn_inicio_mapa4').on('click',inicio);
 	$('#planeta_nivel4').on('click',empezarNivel4);
@@ -101,6 +101,7 @@ function init()
 	for (var i = 1; i <=8; i++) {
 		$('#btn_inicio_mapa'+i).on('click',inicio);
 	}
+
 }
 function empezar_inicio(){
 
