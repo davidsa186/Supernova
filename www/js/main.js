@@ -75,10 +75,10 @@ function init()
 	$('#nave_lvl2').on('click',empezarNivel3);
 
 	//$('#btn_inicio_mapa4').on('click',inicio);
-	$('#planeta_nivel4').on('click',empezarNivel4);
+	$('#arboles_lvl3').on('click',empezarNivel4);
 
 	//$('#btn_inicio_mapa5').on('click',inicio);
-	$('#planeta_nivel5').on('click',empezarNivel5);
+	$('#marciano1_lvl4').on('click',empezarNivel5);
 
 	//$('#btn_inicio_mapa6').on('click',inicio);
 	$('#planeta_nivel6').on('click',empezarNivel6);
@@ -107,12 +107,12 @@ function init()
 }
 function empezar_inicio(){
 
-	window.plugins.NativeAudio.stop( 'empezar' );
-	window.plugins.NativeAudio.loop( 'fondo' );
+	//window.plugins.NativeAudio.stop( 'empezar' );
+	//window.plugins.NativeAudio.loop( 'fondo' );
 	botonClick();
 	$('#seccion_inicio').hide();
 	$('#seccion_personajes').show();
-	window.plugins.NativeAudio.unload( 'empezar' );
+	//window.plugins.NativeAudio.unload( 'empezar' );
 }
 function seleccionarSexo(evt){
 
@@ -316,10 +316,10 @@ function perder(evt){
 
 
 function botonClick(){
-	window.plugins.NativeAudio.play( 'click' );
+//	window.plugins.NativeAudio.play( 'click' );
 }
 function cargarInicio(){
-	 window.setTimeout( function(){
+	/* window.setTimeout( function(){
        window.plugins.NativeAudio.loop( 'empezar' );
-    }, 1500 );
+    }, 1500 );*/
 }
