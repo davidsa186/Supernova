@@ -73,7 +73,9 @@ function init()
 	
 	//$('#btn_inicio_mapa2').on('click',inicio);
 	//$('#nave_lvl1').on('click',empezarNivel2);
-	$( "#nave_lvl1" ).draggable();
+
+
+
 
 
 	//$('#btn_inicio_mapa3').on('click',inicio);
@@ -111,6 +113,20 @@ function init()
 
 }
 
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
 
 
 function empezar_inicio(){
