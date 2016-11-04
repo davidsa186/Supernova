@@ -31,6 +31,8 @@ var cont_logros=0;
 var cont_galaxia1=0;
 var cont_galaxia2=0;
 
+
+
 function init()
 {
 	
@@ -67,9 +69,12 @@ function init()
 
 	//$('#btn_inicio_mapa1').on('click',inicio);
 	$('#planeta_nivel1').on('click',empezarNivel1);
+
 	
 	//$('#btn_inicio_mapa2').on('click',inicio);
-	$('#nave_lvl1').on('click',empezarNivel2);
+	//$('#nave_lvl1').on('click',empezarNivel2);
+	$( "#nave_lvl1" ).draggable();
+
 
 	//$('#btn_inicio_mapa3').on('click',inicio);
 	$('#nave_lvl2').on('click',empezarNivel3);
@@ -102,9 +107,12 @@ function init()
 		$('#btn_inicio_mapa'+i).on('click',inicio);
 	}
 
-	
+
 
 }
+
+
+
 function empezar_inicio(){
 
 	//window.plugins.NativeAudio.stop( 'empezar' );
