@@ -181,19 +181,25 @@ body{
 }
 
 
-
+/*lvl 1*/
 #nave_lvl1{
     position: absolute;
     left: 10px;
-    top: 400px;
+    top: 600px;
 }
 #fondo_lvl1{
     position: absolute;
     left: 0px;
     top: 0px;
 }
+#planeta_lvl1{
+    position: absolute;
+    left: 910px;
+    top: 463px;
+}
 
 
+/*lvl 2*/
 
 #fondo_lvl2{
     position: absolute;
@@ -229,4 +235,60 @@ body{
     position: absolute;
     left: 1000px;
     top: 200px;
+}
+
+
+/*level 3*/
+#arboles_lvl3{
+    position: absolute;
+    left: 720px;
+    top: 160px;
+}
+#edificio_lvl3{
+    position: absolute;
+    left: 450px;
+    top: 163px;
+}
+#marciano_lvl3{
+    position: absolute;
+    left: 579px;
+    top: 157px;
+}
+#marciano2_lvl3{
+    position: absolute;
+    left: 910px;
+    top: 150px;
+}
+#sombra_arboleslvl3{
+    position: absolute;
+    left: 920px;
+    top: 580px;
+}
+#sombra_edificiolvl3{
+    position: absolute;
+    left: 805px;
+    top: 553px;
+}
+
+
+/*level 4*/
+#marciano1_lvl4{
+    position: absolute;
+    left: 450px;
+    top: 155px;
+}
+#marciano2_lvl4{
+    position: absolute;
+    left: 579px;
+    top: 145px;
+}
+#marciano3_lvl4{
+    position: absolute;
+    left: 700px;
+    top: 145px;
+}
+#marciano4_lvl4{
+    position: absolute;
+    left: 800px;
+    top: 145px;
 }

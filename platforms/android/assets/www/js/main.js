@@ -31,6 +31,8 @@ var cont_logros=0;
 var cont_galaxia1=0;
 var cont_galaxia2=0;
 
+
+
 function init()
 {
 	
@@ -67,18 +69,18 @@ function init()
 
 	//$('#btn_inicio_mapa1').on('click',inicio);
 	$('#planeta_nivel1').on('click',empezarNivel1);
-	
-	//$('#btn_inicio_mapa2').on('click',inicio);
-	$('#nave_lvl1').on('click',empezarNivel2);
+
+
+
 
 	//$('#btn_inicio_mapa3').on('click',inicio);
 	$('#nave_lvl2').on('click',empezarNivel3);
 
 	//$('#btn_inicio_mapa4').on('click',inicio);
-	$('#planeta_nivel4').on('click',empezarNivel4);
+	$('#arboles_lvl3').on('click',empezarNivel4);
 
 	//$('#btn_inicio_mapa5').on('click',inicio);
-	$('#planeta_nivel5').on('click',empezarNivel5);
+	$('#marciano1_lvl4').on('click',empezarNivel5);
 
 	//$('#btn_inicio_mapa6').on('click',inicio);
 	$('#planeta_nivel6').on('click',empezarNivel6);
@@ -102,17 +104,37 @@ function init()
 		$('#btn_inicio_mapa'+i).on('click',inicio);
 	}
 
-	
-
+	cargarDnDlvl1();
 }
+
+function cargarDnDlvl1(){
+	/*Drag and drop nivel 1*/
+	 	$( "#nave_lvl1" ).draggable();
+	    $( "#planeta_lvl1" ).droppable({
+	      drop: function( event, ui ) {
+	        var ensayo=event.target.parentElement.id;
+	       
+	        if (event.toElement.id=="nave_lvl1") {
+	          	$( "#"+event.toElement.id).draggable( "option", "disabled", true );
+	           	$('#'+ensayo).hide();
+				$('#seccion_mapa2_galaxia1').show();
+
+	        }else{
+	          $( "#"+event.toElement.id).draggable( "option", "revert", true );
+	        }
+	      }
+	    });
+}
+
+
 function empezar_inicio(){
 
-	window.plugins.NativeAudio.stop( 'empezar' );
-	window.plugins.NativeAudio.loop( 'fondo' );
+	//window.plugins.NativeAudio.stop( 'empezar' );
+	//window.plugins.NativeAudio.loop( 'fondo' );
 	botonClick();
 	$('#seccion_inicio').hide();
 	$('#seccion_personajes').show();
-	window.plugins.NativeAudio.unload( 'empezar' );
+	//window.plugins.NativeAudio.unload( 'empezar' );
 }
 function seleccionarSexo(evt){
 
@@ -319,7 +341,7 @@ function botonClick(){
 	window.plugins.NativeAudio.play( 'click' );
 }
 function cargarInicio(){
-	 window.setTimeout( function(){
+	window.setTimeout( function(){
        window.plugins.NativeAudio.loop( 'empezar' );
     }, 1500 );
 }
