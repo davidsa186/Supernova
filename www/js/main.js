@@ -70,11 +70,6 @@ function init()
 	//$('#btn_inicio_mapa1').on('click',inicio);
 	$('#planeta_nivel1').on('click',empezarNivel1);
 
-	
-	//$('#btn_inicio_mapa2').on('click',inicio);
-	//$('#nave_lvl1').on('click',empezarNivel2);
-
-
 
 
 
@@ -109,23 +104,26 @@ function init()
 		$('#btn_inicio_mapa'+i).on('click',inicio);
 	}
 
-
-
+	cargarDnDlvl1();
 }
 
+function cargarDnDlvl1(){
+	/*Drag and drop nivel 1*/
+	 	$( "#nave_lvl1" ).draggable();
+	    $( "#planeta_lvl1" ).droppable({
+	      drop: function( event, ui ) {
+	        var ensayo=event.target.parentElement.id;
+	       
+	        if (event.toElement.id=="nave_lvl1") {
+	          	$( "#"+event.toElement.id).draggable( "option", "disabled", true );
+	           	$('#'+ensayo).hide();
+				$('#seccion_mapa2_galaxia1').show();
 
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+	        }else{
+	          $( "#"+event.toElement.id).draggable( "option", "revert", true );
+	        }
+	      }
+	    });
 }
 
 
