@@ -36,7 +36,7 @@ var cont_galaxia2=0;
 function init()
 {
 	
-	cargarInicio();
+	//cargarInicio();
 	$('#btn_empezar_inicio').on('click',empezar_inicio);
 
 	$('#nino').on('click',seleccionarSexo);
@@ -109,13 +109,15 @@ function init()
 
 function cargarDnDlvl1(){
 	/*Drag and drop nivel 1*/
-	 	$( "#nave_lvl1" ).draggable();
+	 	$( "#nave_lvl1" ).draggable({
+		  revert: true
+		});
 	    $( "#planeta_lvl1" ).droppable({
 	      drop: function( event, ui ) {
 	        var ensayo=event.target.parentElement.id;
 	       
 	        if (event.toElement.id=="nave_lvl1") {
-	          	$( "#"+event.toElement.id).draggable( "option", "disabled", true );
+	          	//$( "#"+event.toElement.id).draggable( "option", "revert", true );
 	           	$('#'+ensayo).hide();
 				$('#seccion_mapa2_galaxia1').show();
 
@@ -338,10 +340,10 @@ function perder(evt){
 
 
 function botonClick(){
-	window.plugins.NativeAudio.play( 'click' );
-}
+	//window.plugins.NativeAudio.play( 'click' );
+}/*
 function cargarInicio(){
 	window.setTimeout( function(){
        window.plugins.NativeAudio.loop( 'empezar' );
     }, 1500 );
-}
+}*/
