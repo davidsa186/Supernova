@@ -292,3 +292,215 @@ body{
     left: 800px;
     top: 145px;
 }
+
+
+
+
+
+
+.numeros
+{
+    position: absolute;
+    left: 400px;
+    top: 100px;
+}
+#ya{
+    position: absolute;
+    left: 200px;
+    top: 100px;
+}
+
+/*lvl 5*/
+#fondoNivel5{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+#astronautaN5{
+
+    position: absolute;
+    left: 350px;
+    top: 350px;
+}
+#marciano1N5{
+    
+    position: absolute;
+    left: 100px;
+    top: 500px;
+}
+#marciano2N5{
+    
+    position: absolute;
+    left: 220px;
+    top: 180px;
+}
+#marciano3N5{
+    
+    position: absolute;
+    left: 610px;
+    top: 450px;
+}
+#marciano4N5{
+    
+    position: absolute;
+    left: 850px;
+    top: 450px;
+}
+#marciano5N5{
+    
+    position: absolute;
+    left: 1080px;
+    top: 500px;
+}
+#marciano6N5{
+    
+    position: absolute;
+    left: 980px;
+    top: 250px;
+}
+
+
+
+/*lvl 7*/
+#numero1N7{
+    position: absolute;
+    left: 400px;
+    top: 650px;
+}
+#numero2N7{
+    position: absolute;
+    left: 1000px;
+    top: 650px;
+}
+#numero3N7{
+    position: absolute;
+    left: 810px;
+    top: 650px;
+}
+#numero5N7{
+    position: absolute;
+    left: 300px;
+    top: 650px;
+}
+#numero6N7{
+    position: absolute;
+    left: 710px;
+    top: 650px;
+}
+#numero7N7{
+    position: absolute;
+    left: 490px;
+    top: 650px;
+}
+#numero9N7{
+    position: absolute;
+    left: 910px;
+    top: 650px;
+}
+#numero10N7{
+    position: absolute;
+    left: 585px;
+    top: 650px;
+}
+
+
+/*lvl 8*/
+#cofre1N8{
+    position: absolute;
+    left: 100px;
+    top: 500px;
+}
+#cofre2N8{
+    position: absolute;
+    left: 300px;
+    top: 650px;
+}
+#cofre3N8{
+    position: absolute;
+    left: 300px;
+    top: 350px;
+}
+#cofre4N8{
+    position: absolute;
+    left: 700px;
+    top: 670px;
+}
+#cofre5N8{
+    position: absolute;
+    left: 700px;
+    top: 490px;
+}
+#cofre6N8{
+    position: absolute;
+    left: 850px;
+    top: 360px;
+}
+#cofre7N8{
+    position: absolute;
+    left: 950px;
+    top: 470px;
+}
+#cofre8N8{
+    position: absolute;
+    left: 1130px;
+    top: 400px;
+}
+
+
+/*lvl 6*/
+#banderaN6{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+#cascoN6{
+    position: absolute;
+    left: 770px;
+    top: 190px;
+}
+
+#cofreN6{
+    position: absolute;
+    left: 840px;
+    top: 520px;
+}
+
+#cuevaN6{
+    position: absolute;
+    left: 200px;
+    top: 460px;
+}
+#banderaN6{
+    position: absolute;
+    left: 1060px;
+    top: 190px;
+}
+#marciano1N6{
+    position: absolute;
+    left: 330px;
+    top: 190px;
+}
+#marciano2N6{
+    position: absolute;
+    left: 660px;
+    top: 185px;
+}
+#marciano3N6{
+    position: absolute;
+    left: 920px;
+    top: 185px;
+}
+#naveN6{
+    position: absolute;
+    left: 470px;
+    top: 190px;
+}
+
+
+
+#SuperLogro{
+    position: absolute;
+    top: 120px;
+    left: 300px;
+}
+

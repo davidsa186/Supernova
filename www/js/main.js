@@ -20,6 +20,9 @@ var roca_ninos=["img/avatars/roca_nino/1.png","img/avatars/roca_nino/2.png","img
 
 var naves_logros_nada=["img/logros/nave1.png","img/logros/nave2.png","img/logros/nave3.png"];
 
+var logros=["img/logros/superado1.png","img/logros/superado2.png","img/logros/superado3.png","img/logros/superado4.png",
+			"img/logros/superado5.png","img/logros/superado6.png","img/logros/superado7.png","img/logros/superado8.png"];
+
 window.onload = init;
 var seleccion;
 var cont;
@@ -30,7 +33,7 @@ var roca;
 var cont_logros=0;
 var cont_galaxia1=0;
 var cont_galaxia2=0;
-
+var cont_niveles=0;
 
 
 function init()
@@ -67,28 +70,13 @@ function init()
 	$('#empezar_galaxia1').on('click',mapaGalaxia1);
 
 
-	//$('#btn_inicio_mapa1').on('click',inicio);
 	$('#planeta_nivel1').on('click',empezarNivel1);
-
-
-
-
-	//$('#btn_inicio_mapa3').on('click',inicio);
-	$('#nave_lvl2').on('click',empezarNivel3);
-
-	//$('#btn_inicio_mapa4').on('click',inicio);
-	$('#arboles_lvl3').on('click',empezarNivel4);
-
-	//$('#btn_inicio_mapa5').on('click',inicio);
-	$('#marciano1_lvl4').on('click',empezarNivel5);
-
-	//$('#btn_inicio_mapa6').on('click',inicio);
+	$('#planeta_nivel2').on('click',empezarNivel2);
+	$('#planeta_nivel3').on('click',empezarNivel3);
+	$('#planeta_nivel4').on('click',empezarNivel4);
+	$('#planeta_nivel5').on('click',empezarNivel5);
 	$('#planeta_nivel6').on('click',empezarNivel6);
-
-	//$('#btn_inicio_mapa7').on('click',inicio);
 	$('#planeta_nivel7').on('click',empezarNivel7);
-
-	//$('#btn_inicio_mapa8').on('click',inicio);
 	$('#planeta_nivel8').on('click',empezarNivel8);
 
 
@@ -105,12 +93,14 @@ function init()
 	}
 
 	cargarDnDlvl1();
+	cargarDnDlvl2();
 }
 
 function cargarDnDlvl1(){
 	/*Drag and drop nivel 1*/
 	 	$( "#nave_lvl1" ).draggable({
-		  revert: true
+		  revert: true,
+		  scroll: false
 		});
 	    $( "#planeta_lvl1" ).droppable({
 	      drop: function( event, ui ) {
@@ -119,13 +109,121 @@ function cargarDnDlvl1(){
 	        if (event.toElement.id=="nave_lvl1") {
 	          	//$( "#"+event.toElement.id).draggable( "option", "revert", true );
 	           	$('#'+ensayo).hide();
-				$('#seccion_mapa2_galaxia1').show();
+	           	var a=cont_niveles+1;
+	           	logro(a);
+				//$('#seccion_mapa'+a+'_galaxia1').show();
 
 	        }else{
 	          $( "#"+event.toElement.id).draggable( "option", "revert", true );
 	        }
 	      }
 	    });
+}
+
+var cont_perder_lvl2=0;
+var cont_ganar_lvl2=0;
+function cargarDnDlvl2(){
+	var ensayo;
+		var seccion_actual;
+
+		$( "#nave_lvl2" ).draggable({
+		  revert: true,
+		  scroll: false
+		});
+		$( "#marciano_lvl2" ).draggable({
+		  revert: true,
+		  scroll: false
+		});
+		$( "#planeta_lvl2" ).draggable({
+		  revert: true,
+		  scroll: false
+		});
+
+	    $( "#nave2_lvl2" ).droppable({
+	      drop: function( event, ui ) {
+	      	seccion_actual=event.target.parentElement.id;
+	        if (event.toElement.id=="marciano_lvl2") {
+	         	 $( "#marciano_lvl2" ).hide();
+	        	cont_ganar_lvl2++;
+	        	verificarlvl2(cont_ganar_lvl2,cont_perder_lvl2,seccion_actual);
+	        }else{
+	        	cont_perder_lvl2++;
+	        	verificarlvl2(cont_ganar_lvl2,cont_perder_lvl2,seccion_actual);
+	          	$( "#"+event.toElement.id).draggable( "option", "revert", true );
+	        }
+	      }
+	    });
+
+	    $( "#maciano2_lvl2" ).droppable({
+	      drop: function( event, ui ) {
+	       seccion_actual=event.target.parentElement.id;
+	        if (event.toElement.id=="planeta_lvl2") {
+	          	 $( "#planeta_lvl2" ).hide();
+	        	cont_ganar_lvl2++;
+	        	verificarlvl2(cont_ganar_lvl2,cont_perder_lvl2,seccion_actual);
+	        }else{
+	        	cont_perder_lvl2++;
+	        	verificarlvl2(cont_ganar_lvl2,cont_perder_lvl2,seccion_actual);
+	          $( "#"+event.toElement.id).draggable( "option", "revert", true );
+	        }
+	      }
+	    });
+
+	    $( "#nino_lvl2" ).droppable({
+	      drop: function( event, ui ) {
+	       seccion_actual=event.target.parentElement.id;
+	        if (event.toElement.id=="nave_lvl2") {
+	          	 $( "#nave_lvl2" ).hide();
+	        	cont_ganar_lvl2++;
+	        	verificarlvl2(cont_ganar_lvl2,cont_perder_lvl2,seccion_actual);
+	        }else{
+	        	cont_perder_lvl2++;
+	        	verificarlvl2(cont_ganar_lvl2,cont_perder_lvl2,seccion_actual);
+	          $( "#"+event.toElement.id).draggable( "option", "revert", true );
+	        }
+	      }
+	    });
+
+
+}
+
+function verificarlvl2(cont,cont_perder,seccion_actual){
+
+	    if (cont==3) {
+	    	$( "#"+seccion_actual).hide();
+	    	var a=cont_niveles+1;
+	     	logro(a);
+	     	 $( "#marciano_lvl2" ).show();
+			 $( "#planeta_lvl2" ).show();
+			$( "#nave_lvl2" ).show();
+			cont_ganar_lvl2=0;
+	   	   cont_perder_lvl2=0;
+	    }
+	    if (cont_perder==3) {
+	    	$( "#"+seccion_actual).hide();
+	    	perder(a,seccion_actual);
+	    	cont_ganar_lvl2=0;
+	    	cont_perder_lvl2=0;
+	    }
+
+
+}
+
+
+function logro(a){
+	$('#SuperLogro').attr("src",logros[a-2]);
+	$('#Logro').show();
+	setTimeout(function(){ 
+		$('#Logro').hide();
+		$('#seccion_mapa'+a+'_galaxia1').show();
+	}, 3000);
+}
+function perder(a,seccion_actual) {
+	$('#seccion_perdido').show();
+	setTimeout(function(){ 
+		$('#seccion_perdido').hide();
+		$('#'+seccion_actual).show();
+	}, 3000);
 }
 
 
@@ -287,31 +385,36 @@ function empezarNivel1(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_nivel1').show();
+	cont_niveles=1;
+	conteo(cont_niveles);
+
 }
 function empezarNivel2(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_nivel2').show();
+	cont_niveles=2;
+	conteo(cont_niveles);
 }
 function empezarNivel3(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_nivel3').show();
+	cont_niveles=3;
+	conteo(cont_niveles);
 }
 function empezarNivel4(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_nivel4').show();
+	cont_niveles=4;
+	conteo(cont_niveles);
 }
 function empezarNivel5(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_mapa6_galaxia1').show();
+	$('#seccion_nivel5').show();
 }
 function empezarNivel6(evt){
 	botonClick();
@@ -332,11 +435,6 @@ function empezarNivel8(evt){
 	$('#seccion_perdido').show();
 }
 
-function perder(evt){
-	var seccion_actual=evt.target.parentNode.id;
-	$('#'+seccion_actual).hide();
-	$('#seccion_perdido').show();
-}
 
 
 function botonClick(){
@@ -347,3 +445,31 @@ function cargarInicio(){
        window.plugins.NativeAudio.loop( 'empezar' );
     }, 1500 );
 }*/
+
+
+function conteo(cont){
+
+	$('#seccion_321').show();
+	cambiarImgConteo(cont);	
+	
+}
+
+function cambiarImgConteo(cont){
+	setTimeout(function(){ $('#numero1').addClass('numeros animated zoomOut');}, 1000);
+	setTimeout(function(){ $('#numero2').addClass('numeros animated zoomOut');}, 2000);
+	setTimeout(function(){ $('#numero3').addClass('numeros animated zoomOut');$('#ya').show();}, 3000);
+	setTimeout(function(){ 
+		$('#ya').addClass('animated zoomOut');
+		$('#seccion_321').hide();
+		$('#seccion_nivel'+cont).show();
+	}, 4000);
+	removerClasesConteo();
+}
+
+function removerClasesConteo(){
+	$('#numero1').removeClass('animated zoomOut');
+	$('#numero2').removeClass('animated zoomOut');
+	$('#numero3').removeClass('animated zoomOut');
+	$('#ya').removeClass('animated zoomOut');
+	$('#ya').hide();
+}
