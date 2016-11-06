@@ -504,3 +504,22 @@ body{
     left: 300px;
 }
 
+
+#gif_lvls{
+    position: absolute;
+    /*top: 10px;*/
+    left: 60px
+}
+
+
+/*lvl4*/
+#cuadro1{
+    position: absolute;
+    top: 504px;
+    left: 924px;
+}
+#cuadro2{
+    position: absolute;
+    top: 334px;
+    left: 926px;
+}
