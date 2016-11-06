@@ -564,7 +564,7 @@ function logro(a){
 		}else{
 			$('#seccion_mapa'+a+'_galaxia1').show();
 		}	
-		
+		alert('#seccion_mapa'+a+'_galaxia1');
 	}, 3000);
 	cambiarLogroSeccion(a);
 	cont_niveles++;
@@ -891,9 +891,9 @@ function reiniciarNiveles(){
 	cont_perder_lvl6=0;
 	mostrarImglvl6();
 
-	var cont_perder_lvl7=0;
-	var cont_perder_lvl8=0;
-	var cont_ganar_lvl8=0;
+	cont_perder_lvl7=0;
+	cont_perder_lvl8=0;
+	cont_ganar_lvl8=0;
 	cargarImglvl8()
 	cont_perder_lvl5=0;
 	cont_ganar_lvl3=0;
@@ -905,4 +905,10 @@ function reiniciarNiveles(){
 	$('#marciano2_lvl4').show();
 	$('#edificio_lvl3').show( );
 	$('#arboles_lvl3').show( );
+
+	$('#cofre2N8').show();
+	$('#cofre3N8').show();
+	$('#cofre6N8').show();
+	$('#cofre7N8').show();
+
 }
