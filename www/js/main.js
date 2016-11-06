@@ -572,7 +572,6 @@ function empezarNivel1(evt){
 	$('#'+seccion_actual).hide();
 	cont_niveles=1;
 	mostrarGif(cont_niveles);
-	//conteo(cont_niveles);
 
 }
 function empezarNivel2(evt){
@@ -625,12 +624,12 @@ function empezarNivel8(evt){
 
 function botonClick(){
 	//window.plugins.NativeAudio.play( 'click' );
-}/*
-function cargarInicio(){
-	window.setTimeout( function(){
-       window.plugins.NativeAudio.loop( 'empezar' );
-    }, 1500 );
-}*/
+}
+// function cargarInicio(){
+// 	window.setTimeout( function(){
+//        window.plugins.NativeAudio.loop( 'empezar' );
+//     }, 1500 );
+// }
 
 function mostrarGif(cont){
 	
