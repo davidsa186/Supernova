@@ -241,8 +241,8 @@ body{
 /*level 3*/
 #arboles_lvl3{
     position: absolute;
-    left: 720px;
-    top: 160px;
+    left: 731px;
+    top: 168px;
 }
 #edificio_lvl3{
     position: absolute;
@@ -261,8 +261,8 @@ body{
 }
 #sombra_arboleslvl3{
     position: absolute;
-    left: 920px;
-    top: 580px;
+    left: 902px;
+    top: 545px;
 }
 #sombra_edificiolvl3{
     position: absolute;
@@ -448,15 +448,11 @@ body{
 
 
 /*lvl 6*/
-#banderaN6{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-}
+
 #cascoN6{
     position: absolute;
-    left: 770px;
-    top: 190px;
+    left: 726px;
+    top: 236px;
 }
 
 #cofreN6{
@@ -472,28 +468,28 @@ body{
 }
 #banderaN6{
     position: absolute;
-    left: 1060px;
-    top: 190px;
+    left: 1011px;
+    top: 226px;
 }
 #marciano1N6{
     position: absolute;
-    left: 330px;
-    top: 190px;
+    left: 320px;
+    top: 226px;
 }
 #marciano2N6{
     position: absolute;
-    left: 660px;
-    top: 185px;
+    left: 620px;
+    top: 222px;
 }
 #marciano3N6{
     position: absolute;
-    left: 920px;
-    top: 185px;
+    left: 874px;
+    top: 224px;
 }
 #naveN6{
     position: absolute;
-    left: 470px;
-    top: 190px;
+    left: 446px;
+    top: 229px;
 }
 
 
