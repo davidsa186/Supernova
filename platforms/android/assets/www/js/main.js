@@ -87,15 +87,13 @@ function init()
 	$('#planeta_nivel8').on('click',empezarNivel8);
 
 
-	//$('#btn_inicio_perdido').on('click',inicio);
-	//$('#btn_logros_perdido').on('click',logros_seccion);
 
 
 	var numBtn_ini = $('.btn_inicio').length
-	for (var i = 1; i <= 4; i++) {
+	for (var i = 1; i <= numBtn_ini; i++) {
 		$('#btn_inicio_lvl'+i).on('click',inicio);
 	}
-	for (var i = 1; i <=8; i++) {
+	for (var i = 1; i <=numBtn_ini; i++) {
 		$('#btn_inicio_mapa'+i).on('click',inicio);
 	}
 
@@ -103,7 +101,190 @@ function init()
 	cargarDnDlvl2();
 	cargarDnDlvl3();
 	cargarDnDlvl4();
+	cargarlvl5();
+	cargarDnDlvl6();
+	cargarlvl7();
+	cargarlvl8();
 }
+
+var cont_ganar_lvl6=0;
+var cont_perder_lvl6=0;
+function cargarDnDlvl6(){
+	var seccion_actual;
+
+		$( "#banderaN6" ).draggable({
+		  revert: true,
+		  scroll: false
+		});
+		$( "#cascoN6" ).draggable({
+		  revert: true,
+		  scroll: false
+		});
+		$( "#marciano1N6" ).draggable({
+		  revert: true,
+		  scroll: false
+		});
+		$( "#marciano2N6" ).draggable({
+		  revert: true,
+		  scroll: false
+		});
+		$( "#marciano3N6" ).draggable({
+		  revert: true,
+		  scroll: false
+		});
+		$( "#naveN6" ).draggable({
+		  revert: true,
+		  scroll: false
+		});
+
+	    $( "#cuevaN6" ).droppable({
+	      drop: function( event, ui ) {
+	      	seccion_actual=event.target.parentElement.id;
+	        if (event.toElement.id=="marciano1N6" || event.toElement.id=="marciano2N6" || event.toElement.id=="marciano3N6") {
+	         	$('#'+event.toElement.id).hide()
+	        	cont_ganar_lvl6++;
+	        	verificarlvl6(cont_ganar_lvl6,cont_perder_lvl6,seccion_actual);
+	        }else{
+	        	cont_perder_lvl6++;
+	        	verificarlvl6(cont_ganar_lvl6,cont_perder_lvl6,seccion_actual);
+	          	$( "#"+event.toElement.id).draggable( "option", "revert", true );
+	        }
+	      }
+	    });
+
+	    $( "#cofreN6" ).droppable({
+	      drop: function( event, ui ) {
+	       seccion_actual=event.target.parentElement.id;
+	        if (event.toElement.id=="banderaN6" || event.toElement.id=="cascoN6" || event.toElement.id=="naveN6") {
+	          	$('#'+event.toElement.id).hide()
+	        	cont_ganar_lvl6++;
+	        	verificarlvl6(cont_ganar_lvl6,cont_perder_lvl6,seccion_actual);
+	        }else{
+	        	cont_perder_lvl6++;
+	        	verificarlvl6(cont_ganar_lvl6,cont_perder_lvl6,seccion_actual);
+	          $( "#"+event.toElement.id).draggable( "option", "revert", true );
+	        }
+	      }
+	    });
+}
+function verificarlvl6(cont,cont_perder,seccion_actual){
+	if (cont==6) {
+		$( "#"+seccion_actual).hide();
+    	var a=cont_niveles+1;
+     	logro(a);
+     	cont_ganar_lvl6=0;
+	   	cont_perder_lvl6=0;
+	   	mostrarImglvl6();
+	}
+	if (cont_perder==4) {
+		$( "#"+seccion_actual).hide();
+    	perder(seccion_actual);
+    	cont_ganar_lvl6=0;
+    	cont_perder_lvl6=0;
+    	mostrarImglvl6();
+	}
+}
+function mostrarImglvl6(){
+	$( "#banderaN6" ).show();
+		$( "#cascoN6" ).show();
+		$( "#marciano1N6" ).show();
+		$( "#marciano2N6" ).show();
+		$( "#marciano3N6" ).show();
+		$( "#naveN6" ).show();
+}
+
+function cargarlvl7(){
+	$('#numero7N7').on('click',verificarlvl7);
+	$('.malo_lvl7').on('click',verificarlvl7);
+}
+var cont_perder_lvl7=0;
+function verificarlvl7(evt){
+	var seccion_actual=event.target.parentElement.id;
+	var seleccion = evt.target.id;
+	if (seleccion=="numero7N7") {
+		$( "#"+seccion_actual).hide();
+		var a=cont_niveles+1;
+		logro(a);
+	   	cont_perder_lvl7=0;
+	}else{
+		cont_perder_lvl7++;
+	}
+	if (cont_perder_lvl7==5) {
+		$( "#"+seccion_actual).hide();
+    	perder(seccion_actual);
+    	cont_perder_lvl7=0;
+	}
+}
+
+
+function cargarlvl8(){
+
+	$('#cofre2N8').on('click',verificarlvl8);
+	$('#cofre3N8').on('click',verificarlvl8);
+	$('#cofre6N8').on('click',verificarlvl8);
+	$('#cofre7N8').on('click',verificarlvl8);
+
+	$('.malo_lvl8').on('click',verificarlvl8);
+}
+var cont_perder_lvl8=0;
+var cont_ganar_lvl8=0;
+function verificarlvl8(evt){
+	var seccion_actual=event.target.parentElement.id;
+	var seleccion = evt.target.id;
+	if (seleccion=="cofre2N8" || seleccion=="cofre3N8" ||seleccion=="cofre6N8" ||seleccion=="cofre7N8") {
+		$( "#"+seleccion).hide();
+		cont_ganar_lvl8++;
+	}else{
+		cont_perder_lvl8++;
+	}
+	if (cont_ganar_lvl8==4) {
+		$( "#"+seccion_actual).hide();
+		var a=cont_niveles+1;
+		logro(a);
+	   	cont_perder_lvl8=0;
+	   	cont_ganar_lvl8=0;
+	   	cargarImglvl8();
+	}
+	if (cont_perder_lvl8==4) {
+		$( "#"+seccion_actual).hide();
+    	perder(seccion_actual);
+    	cont_perder_lvl8=0;
+    	cont_ganar_lvl8=0;
+    	cargarImglvl8();
+	}
+}
+function cargarImglvl8(){
+	$( "#cofre2N8").show();
+	$( "#cofre3N8").show();
+	$( "#cofre6N8").show();
+	$( "#cofre7N8").show();
+}
+
+function cargarlvl5(){
+	$('#astronautaN5').on('click',verificarlvl5);
+	$('.malo_lvl5').on('click',verificarlvl5);
+}
+
+var cont_perder_lvl5=0;
+function verificarlvl5(evt){
+	var seccion_actual=event.target.parentElement.id;
+	var seleccion = evt.target.id;
+	if (seleccion=="astronautaN5") {
+		$( "#"+seccion_actual).hide();
+		var a=cont_niveles+1;
+		logro(a);
+	   	cont_perder_lvl5=0;
+	}else{
+		cont_perder_lvl5++;
+	}
+	if (cont_perder_lvl5==3) {
+		$( "#"+seccion_actual).hide();
+    	perder(seccion_actual);
+    	cont_perder_lvl5=0;
+	}
+}
+
+
 
 function cargarDnDlvl1(){
 	 	$( "#nave_lvl1" ).draggable({
@@ -197,14 +378,17 @@ var cont_perder_lvl3=0;
 
 function cargarDnDlvl3(){
 		var seccion_actual;
+		var startPos1,startPos2;
 
 		$( "#arboles_lvl3" ).draggable({
 		  revert: true,
-		  scroll: false
+		  scroll: false,
+
 		});
 		$( "#edificio_lvl3" ).draggable({
 		  revert: true,
-		  scroll: false
+		  scroll: false,
+
 		});
 		$( "#marciano_lvl3" ).draggable({
 		  revert: true,
@@ -219,8 +403,7 @@ function cargarDnDlvl3(){
 	      drop: function( event, ui ) {
 	      	seccion_actual=event.target.parentElement.id;
 	        if (event.toElement.id=="arboles_lvl3") {
-	         	$('#arboles_lvl3').draggable( "option", "disabled", true );
-	         	$('#arboles_lvl3').draggable( "option", "revert", false );
+	         	$('#arboles_lvl3').hide();
 	        	cont_ganar_lvl3++;
 	        	verificarlvl3(cont_ganar_lvl3,cont_perder_lvl3,seccion_actual);
 	        }else{
@@ -235,8 +418,7 @@ function cargarDnDlvl3(){
 	      drop: function( event, ui ) {
 	       seccion_actual=event.target.parentElement.id;
 	        if (event.toElement.id=="edificio_lvl3") {
-	          	$('#edificio_lvl3').draggable( "option", "disabled", true );
-	          	$('#edificio_lvl3').draggable( "option", "revert", false );
+	          	$('#edificio_lvl3').hide( );
 	        	cont_ganar_lvl3++;
 	        	verificarlvl3(cont_ganar_lvl3,cont_perder_lvl3,seccion_actual);
 	        }else{
@@ -246,8 +428,6 @@ function cargarDnDlvl3(){
 	        }
 	      }
 	    });
-
-
 }
 
 var  cont_ganar_lvl4=0;
@@ -277,8 +457,8 @@ function cargarDnDlvl4(){
 	      drop: function( event, ui ) {
 	      	seccion_actual=event.target.parentElement.id;
 	        if (event.toElement.id=="marciano1_lvl4") {
-	         	$('#marciano1_lvl4').draggable( "option", "disabled", true );
-	         	$('#marciano1_lvl4').draggable( "option", "revert", false );
+	         $('#marciano1_lvl4').hide();
+
 	        	cont_ganar_lvl4++;
 	        	verificarlvl4(cont_ganar_lvl4,cont_perder_lvl4,seccion_actual);
 	        }else{
@@ -293,8 +473,7 @@ function cargarDnDlvl4(){
 	      drop: function( event, ui ) {
 	       seccion_actual=event.target.parentElement.id;
 	        if (event.toElement.id=="marciano2_lvl4") {
-	          	$('#marciano2_lvl4').draggable( "option", "disabled", true );
-	          	$('#marciano2_lvl4').draggable( "option", "revert", false );
+	          	$('#marciano2_lvl4').hide();
 	        	cont_ganar_lvl4++;
 	        	verificarlvl4(cont_ganar_lvl4,cont_perder_lvl4,seccion_actual);
 	        }else{
@@ -316,20 +495,17 @@ function verificarlvl4(cont,cont_perder,seccion_actual){
      	logro(a);
      	cont_ganar_lvl4=0;
 	   	cont_perder_lvl4=0;
-	   	$('#marciano1_lvl4').draggable( "option", "revert", true );
-		$('#marciano2_lvl4').draggable( "option", "revert", true );
-		$('#marciano1_lvl4').draggable( "option", "disabled", false );
-		$('#marciano2_lvl4').draggable( "option", "disabled", false );
+	   	$('#marciano1_lvl4').show();
+		$('#marciano2_lvl4').show();
+
 	}
 	if (cont_perder==2) {
 		$( "#"+seccion_actual).hide();
     	perder(seccion_actual);
     	cont_ganar_lvl4=0;
     	cont_perder_lvl4=0;
-    	$('#marciano1_lvl4').draggable( "option", "revert", true );
-		$('#marciano2_lvl4').draggable( "option", "revert", true );
-		$('#marciano1_lvl4').draggable( "option", "disabled", false );
-		$('#marciano2_lvl4').draggable( "option", "disabled", false );
+    	$('#marciano1_lvl4').show();
+		$('#marciano2_lvl4').show();
 	}
 	
 	
@@ -343,20 +519,17 @@ function verificarlvl3(cont,cont_perder,seccion_actual){
      	logro(a);
      	cont_ganar_lvl3=0;
 	   	cont_perder_lvl3=0;
-	   	$('#edificio_lvl3').draggable( "option", "revert", true );
-		$('#arboles_lvl3').draggable( "option", "revert", true );
-		$('#edificio_lvl3').draggable( "option", "disabled", false );
-		$('#arboles_lvl3').draggable( "option", "disabled", false );
+	   	$('#edificio_lvl3').show( );
+		$('#arboles_lvl3').show( );
+
 	}
 	if (cont_perder==2) {
 		$( "#"+seccion_actual).hide();
     	perder(seccion_actual);
     	cont_ganar_lvl3=0;
     	cont_perder_lvl3=0;
-    	$('#edificio_lvl3').draggable( "option", "revert", true );
-		$('#arboles_lvl3').draggable( "option", "revert", true );
-		$('#edificio_lvl3').draggable( "option", "disabled", false );
-		$('#arboles_lvl3').draggable( "option", "disabled", false );
+    	$('#edificio_lvl3').show( );
+		$('#arboles_lvl3').show( );
 	}
 	
 	
@@ -377,6 +550,9 @@ function verificarlvl2(cont,cont_perder,seccion_actual){
 	    if (cont_perder==3) {
 	    	$( "#"+seccion_actual).hide();
 	    	perder(seccion_actual);
+	    	$( "#marciano_lvl2" ).show();
+			 $( "#planeta_lvl2" ).show();
+			$( "#nave_lvl2" ).show();
 	    	cont_ganar_lvl2=0;
 	    	cont_perder_lvl2=0;
 	    }
@@ -384,18 +560,29 @@ function verificarlvl2(cont,cont_perder,seccion_actual){
 
 
 function logro(a){
+	$('#Logro').hide();
 	$('#SuperLogro').attr("src",logros[a-2]);
 	$('#Logro').show();
 	setTimeout(function(){ 
 		$('#Logro').hide();
-		$('#seccion_mapa'+a+'_galaxia1').show();
+		if (a==9) {
+			$('#seccion_menu').show();
+			$('#galaxia2').attr("src","img/galaxias/galaxia2.png");
+		}else{
+			$('#seccion_mapa'+a+'_galaxia1').show();
+		}	
+		
 	}, 3000);
 	cambiarLogroSeccion(a);
+	cont_niveles++;
 }
 
 function cambiarLogroSeccion(a){
 	$('#img_logro').attr("src",logros_inicio[a-2]);
 	cont_logros_estado=a-2;
+	if (cont_logros_estado==7) {
+		$('#msg_logro').attr("src","img/mensajes/mensaje_logrado.png");
+	}
 }
 
 
@@ -405,6 +592,7 @@ function perder(seccion_actual) {
 		$('#seccion_perdido').hide();
 		$('#'+seccion_actual).show();
 	}, 3000);
+
 }
 
 
@@ -491,6 +679,7 @@ function inicio(evt){
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
 	$('#seccion_menu').show();
+	reiniciarNiveles();
 }
 function logros_seccion(evt){
 	botonClick();
@@ -529,9 +718,13 @@ function cambiarImagenNave(cont_logros){
 			$('#img_logro').attr("src",imagen);
 		}else{
 			$('#img_logro').attr("src",logros_inicio[cont_logros_estado]);
+			if (cont_logros_estado==7) {
+				$('#msg_logro').attr("src","img/mensajes/mensaje_logrado.png");
+		}
 		}
 	}else{
 		$('#img_logro').attr("src",imagen);
+		$('#msg_logro').attr("src","img/mensajes/mensaje_sin_lograr.png");
 	}
 }
 
@@ -563,8 +756,18 @@ function mapaGalaxia1(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	var a=cont_niveles+1
-	$('#seccion_mapa'+a+'_galaxia1').show();
+	var a=cont_niveles
+	if (a==9) {
+		$('#seccion_mapa8_galaxia1').show();
+	}else{
+		if (a==0) {
+			$('#seccion_mapa1_galaxia1').show();
+		}else{
+			$('#seccion_mapa'+a+'_galaxia1').show();
+		}
+		
+	}
+	
 }
 function empezarNivel1(evt){
 	botonClick();
@@ -572,7 +775,6 @@ function empezarNivel1(evt){
 	$('#'+seccion_actual).hide();
 	cont_niveles=1;
 	mostrarGif(cont_niveles);
-	//conteo(cont_niveles);
 
 }
 function empezarNivel2(evt){
@@ -600,25 +802,29 @@ function empezarNivel5(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_nivel5').show();
+	cont_niveles=5;
+	mostrarGif(cont_niveles);
 }
 function empezarNivel6(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_mapa7_galaxia1').show();
+	cont_niveles=6;
+	mostrarGif(cont_niveles);
 }
 function empezarNivel7(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_mapa8_galaxia1').show();
+	cont_niveles=7;
+	mostrarGif(cont_niveles);
 }
 function empezarNivel8(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	$('#seccion_perdido').show();
+	cont_niveles=8;
+	mostrarGif(cont_niveles);
 }
 
 
@@ -633,7 +839,7 @@ function cargarInicio(){
 }
 
 function mostrarGif(cont){
-	
+	$('#gif').hide();
 	$('#gif_lvls').attr("src",gifs[cont-1]);
 	$('#gif').show();
 	setTimeout(function(){ 
@@ -668,4 +874,31 @@ function removerClasesConteo(){
 	$('#numero3').removeClass('animated zoomOut');
 	$('#ya').removeClass('animated zoomOut');
 	$('#ya').hide();
+}
+
+function reiniciarNiveles(){
+	$( "#marciano_lvl2" ).show();
+	$( "#planeta_lvl2" ).show();
+	$( "#nave_lvl2" ).show();
+	cont_ganar_lvl2=0;
+	cont_perder_lvl2=0;
+
+	cont_ganar_lvl6=0;
+	cont_perder_lvl6=0;
+	mostrarImglvl6();
+
+	var cont_perder_lvl7=0;
+	var cont_perder_lvl8=0;
+	var cont_ganar_lvl8=0;
+	cargarImglvl8()
+	cont_perder_lvl5=0;
+	cont_ganar_lvl3=0;
+	cont_perder_lvl3=0;
+	cont_ganar_lvl4=0;
+	cont_perder_lvl4=0;
+
+	$('#marciano1_lvl4').show();
+	$('#marciano2_lvl4').show();
+	$('#edificio_lvl3').show( );
+	$('#arboles_lvl3').show( );
 }
