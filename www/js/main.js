@@ -46,7 +46,7 @@ var cont_logros_estado;
 function init()
 {
 	
-	cargarInicio();
+	//cargarInicio();
 	$('#btn_empezar_inicio').on('click',empezar_inicio);
 
 	$('#nino').on('click',seleccionarSexo);
@@ -97,14 +97,7 @@ function init()
 		$('#btn_inicio_mapa'+i).on('click',inicio);
 	}
 
-	cargarDnDlvl1();
-	cargarDnDlvl2();
-	cargarDnDlvl3();
-	cargarDnDlvl4();
-	cargarlvl5();
-	cargarDnDlvl6();
-	cargarlvl7();
-	cargarlvl8();
+	
 }
 
 var cont_ganar_lvl6=0;
@@ -598,12 +591,12 @@ function perder(seccion_actual) {
 
 function empezar_inicio(){
 
-	window.plugins.NativeAudio.stop( 'empezar' );
-	window.plugins.NativeAudio.loop( 'fondo' );
+	//window.plugins.NativeAudio.stop( 'empezar' );
+	//window.plugins.NativeAudio.loop( 'fondo' );
 	botonClick();
 	$('#seccion_inicio').hide();
 	$('#seccion_personajes').show();
-	window.plugins.NativeAudio.unload( 'empezar' );
+	//window.plugins.NativeAudio.unload( 'empezar' );
 }
 function seleccionarSexo(evt){
 
@@ -775,7 +768,7 @@ function empezarNivel1(evt){
 	$('#'+seccion_actual).hide();
 	cont_niveles=1;
 	mostrarGif(cont_niveles);
-
+	cargarDnDlvl1();
 }
 function empezarNivel2(evt){
 	botonClick();
@@ -783,6 +776,8 @@ function empezarNivel2(evt){
 	$('#'+seccion_actual).hide();
 	cont_niveles=2;
 	mostrarGif(cont_niveles);
+	cargarDnDlvl2();
+
 }
 function empezarNivel3(evt){
 	botonClick();
@@ -790,6 +785,7 @@ function empezarNivel3(evt){
 	$('#'+seccion_actual).hide();
 	cont_niveles=3;
 	mostrarGif(cont_niveles);
+	cargarDnDlvl3();
 }
 function empezarNivel4(evt){
 	botonClick();
@@ -797,6 +793,8 @@ function empezarNivel4(evt){
 	$('#'+seccion_actual).hide();
 	cont_niveles=4;
 	mostrarGif(cont_niveles);
+	cargarDnDlvl4();
+
 }
 function empezarNivel5(evt){
 	botonClick();
@@ -804,6 +802,8 @@ function empezarNivel5(evt){
 	$('#'+seccion_actual).hide();
 	cont_niveles=5;
 	mostrarGif(cont_niveles);
+	cargarlvl5();
+	
 }
 function empezarNivel6(evt){
 	botonClick();
@@ -811,6 +811,8 @@ function empezarNivel6(evt){
 	$('#'+seccion_actual).hide();
 	cont_niveles=6;
 	mostrarGif(cont_niveles);
+	cargarDnDlvl6();
+
 }
 function empezarNivel7(evt){
 	botonClick();
@@ -818,6 +820,8 @@ function empezarNivel7(evt){
 	$('#'+seccion_actual).hide();
 	cont_niveles=7;
 	mostrarGif(cont_niveles);
+	cargarlvl7();
+
 }
 function empezarNivel8(evt){
 	botonClick();
@@ -825,21 +829,21 @@ function empezarNivel8(evt){
 	$('#'+seccion_actual).hide();
 	cont_niveles=8;
 	mostrarGif(cont_niveles);
+	cargarlvl8();
 }
 
 
 
 function botonClick(){
-	window.plugins.NativeAudio.play( 'click' );
+	//window.plugins.NativeAudio.play( 'click' );
 }
-function cargarInicio(){
+/*function cargarInicio(){
 	window.setTimeout( function(){
        window.plugins.NativeAudio.loop( 'empezar' );
     }, 1500 );
-}
+}*/
 
 function mostrarGif(cont){
-	$('#gif').hide();
 	$('#gif_lvls').attr("src",gifs[cont-1]);
 	$('#gif').show();
 	setTimeout(function(){ 
