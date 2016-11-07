@@ -42,6 +42,14 @@ var app = {
             }, function(msg){
                 console.log( 'error: ' + msg );
             });
+            window.plugins.NativeAudio.preloadSimple( 'ganar', 'sounds/GanarJuego.mp3', function(msg){
+            }, function(msg){
+                console.log( 'error: ' + msg );
+            });
+            window.plugins.NativeAudio.preloadSimple( 'perder', 'sounds/PerderJuego.mp3', function(msg){
+            }, function(msg){
+                console.log( 'error: ' + msg );
+            });
             
          
          }

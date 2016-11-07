@@ -553,6 +553,7 @@ function verificarlvl2(cont,cont_perder,seccion_actual){
 
 
 function logro(a){
+	window.plugins.NativeAudio.play( 'ganar' );
 	$('#SuperLogro').attr("src",logros[a-2]);
 	$('#Logro').show();
 	setTimeout(function(){ 
@@ -578,6 +579,7 @@ function cambiarLogroSeccion(a){
 
 
 function perder(seccion_actual) {
+	window.plugins.NativeAudio.play( 'perder' );
 	$('#seccion_perdido').show();
 	setTimeout(function(){ 
 		$('#seccion_perdido').hide();
