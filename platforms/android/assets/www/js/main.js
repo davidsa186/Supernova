@@ -47,54 +47,53 @@ function init()
 {
 	
 	//cargarInicio();
-	$('#btn_empezar_inicio').on('click',empezar_inicio);
+	$('#btn_empezar_inicio').off().on('click',empezar_inicio);
 
-	$('#nino').on('click',seleccionarSexo);
-	$('#nina').on('click',seleccionarSexo);
+	$('#nino').off().on('click',seleccionarSexo);
+	$('#nina').off().on('click',seleccionarSexo);
+	$('#btn_siguiente_avatar_nino').off().on('click',cambiar_avatar);
+	$('#btn_volver_avatar_nino').off().on('click',cambiar_avatar);
+	$('#btn_siguiente_avatar_nina').off().on('click',cambiar_avatar);
+	$('#btn_volver_avatar_nina').off().on('click',cambiar_avatar);
 
-	$('#btn_siguiente_avatar_nino').on('click',cambiar_avatar);
-	$('#btn_volver_avatar_nino').on('click',cambiar_avatar);
-	$('#btn_siguiente_avatar_nina').on('click',cambiar_avatar);
-	$('#btn_volver_avatar_nina').on('click',cambiar_avatar);
+	$('#btn_empezar_nino').off().on('click',empezar);
+	$('#btn_empezar_nina').off().on('click',empezar);
 
-	$('#btn_empezar_nino').on('click',empezar);
-	$('#btn_empezar_nina').on('click',empezar);
+	$('#btn_inicio_menu').off().on('click',inicio);
+	$('#btn_logros_menu').off().on('click',logros_seccion);
 
-	$('#btn_inicio_menu').on('click',inicio);
-	$('#btn_logros_menu').on('click',logros_seccion);
+	$('#btn_inicio_logros').off().on('click',inicio);
 
-	$('#btn_inicio_logros').on('click',inicio);
+	$('#btn_logro_siguiente').off().on('click',galaxias_logros);
+	$('#btn_logro_volver').off().on('click',galaxias_logros);
 
-	$('#btn_logro_siguiente').on('click',galaxias_logros);
-	$('#btn_logro_volver').on('click',galaxias_logros);
+	$('#galaxia1').off().on('click',galaxia1);
+	$('#galaxia2').off().on('click',galaxia2);
+	$('#galaxia3').off().on('click',galaxia3);
 
-	$('#galaxia1').on('click',galaxia1);
-	$('#galaxia2').on('click',galaxia2);
-	$('#galaxia3').on('click',galaxia3);
-
-	$('#btn_inicio_galaxia1').on('click',inicio);
-	$('#btn_logros_galaxia1').on('click',logros_seccion);
-	$('#empezar_galaxia1').on('click',mapaGalaxia1);
+	$('#btn_inicio_galaxia1').off().on('click',inicio);
+	$('#btn_logros_galaxia1').off().on('click',logros_seccion);
+	$('#empezar_galaxia1').off().on('click',mapaGalaxia1);
 
 
-	$('#planeta_nivel1').on('click',empezarNivel1);
-	$('#planeta_nivel2').on('click',empezarNivel2);
-	$('#planeta_nivel3').on('click',empezarNivel3);
-	$('#planeta_nivel4').on('click',empezarNivel4);
-	$('#planeta_nivel5').on('click',empezarNivel5);
-	$('#planeta_nivel6').on('click',empezarNivel6);
-	$('#planeta_nivel7').on('click',empezarNivel7);
-	$('#planeta_nivel8').on('click',empezarNivel8);
+	$('#planeta_nivel1').off().on('click',empezarNivel1);
+	$('#planeta_nivel2').off().on('click',empezarNivel2);
+	$('#planeta_nivel3').off().on('click',empezarNivel3);
+	$('#planeta_nivel4').off().on('click',empezarNivel4);
+	$('#planeta_nivel5').off().on('click',empezarNivel5);
+	$('#planeta_nivel6').off().on('click',empezarNivel6);
+	$('#planeta_nivel7').off().on('click',empezarNivel7);
+	$('#planeta_nivel8').off().on('click',empezarNivel8);
 
 
 
 
 	var numBtn_ini = $('.btn_inicio').length
 	for (var i = 1; i <= numBtn_ini; i++) {
-		$('#btn_inicio_lvl'+i).on('click',inicio);
+		$('#btn_inicio_lvl'+i).off().on('click',inicio);
 	}
 	for (var i = 1; i <=numBtn_ini; i++) {
-		$('#btn_inicio_mapa'+i).on('click',inicio);
+		$('#btn_inicio_mapa'+i).off().on('click',inicio);
 	}
 
 	
@@ -187,8 +186,8 @@ function mostrarImglvl6(){
 }
 
 function cargarlvl7(){
-	$('#numero7N7').on('click',verificarlvl7);
-	$('.malo_lvl7').on('click',verificarlvl7);
+	$('#numero7N7').off().on('click',verificarlvl7);
+	$('.malo_lvl7').off().on('click',verificarlvl7);
 }
 var cont_perder_lvl7=0;
 function verificarlvl7(evt){
@@ -212,12 +211,12 @@ function verificarlvl7(evt){
 
 function cargarlvl8(){
 
-	$('#cofre2N8').on('click',verificarlvl8);
-	$('#cofre3N8').on('click',verificarlvl8);
-	$('#cofre6N8').on('click',verificarlvl8);
-	$('#cofre7N8').on('click',verificarlvl8);
+	$('#cofre2N8').off().on('click',verificarlvl8);
+	$('#cofre3N8').off().on('click',verificarlvl8);
+	$('#cofre6N8').off().on('click',verificarlvl8);
+	$('#cofre7N8').off().on('click',verificarlvl8);
 
-	$('.malo_lvl8').on('click',verificarlvl8);
+	$('.malo_lvl8').off().on('click',verificarlvl8);
 }
 var cont_perder_lvl8=0;
 var cont_ganar_lvl8=0;
@@ -254,8 +253,8 @@ function cargarImglvl8(){
 }
 
 function cargarlvl5(){
-	$('#astronautaN5').on('click',verificarlvl5);
-	$('.malo_lvl5').on('click',verificarlvl5);
+	$('#astronautaN5').off().on('click',verificarlvl5);
+	$('.malo_lvl5').off().on('click',verificarlvl5);
 }
 
 var cont_perder_lvl5=0;
@@ -270,6 +269,7 @@ function verificarlvl5(evt){
 	}else{
 		cont_perder_lvl5++;
 	}
+
 	if (cont_perder_lvl5==3) {
 		$( "#"+seccion_actual).hide();
     	perder(seccion_actual);
@@ -553,7 +553,6 @@ function verificarlvl2(cont,cont_perder,seccion_actual){
 
 
 function logro(a){
-	$('#Logro').hide();
 	$('#SuperLogro').attr("src",logros[a-2]);
 	$('#Logro').show();
 	setTimeout(function(){ 
@@ -617,6 +616,7 @@ function seleccionarSexo(evt){
 	}
 }
 
+var clicks=0;
 function cambiar_avatar(evt){
 	botonClick();
 	seleccion = evt.target.id;
@@ -713,7 +713,7 @@ function cambiarImagenNave(cont_logros){
 			$('#img_logro').attr("src",logros_inicio[cont_logros_estado]);
 			if (cont_logros_estado==7) {
 				$('#msg_logro').attr("src","img/mensajes/mensaje_logrado.png");
-		}
+			}
 		}
 	}else{
 		$('#img_logro').attr("src",imagen);
@@ -749,7 +749,7 @@ function mapaGalaxia1(evt){
 	botonClick();
 	var seccion_actual=evt.target.parentNode.id;
 	$('#'+seccion_actual).hide();
-	var a=cont_niveles
+	var a=cont_niveles;
 	if (a==9) {
 		$('#seccion_mapa8_galaxia1').show();
 	}else{
@@ -891,10 +891,10 @@ function reiniciarNiveles(){
 	cont_perder_lvl6=0;
 	mostrarImglvl6();
 
-	var cont_perder_lvl7=0;
-	var cont_perder_lvl8=0;
-	var cont_ganar_lvl8=0;
-	cargarImglvl8()
+	cont_perder_lvl7=0;
+	cont_perder_lvl8=0;
+	cont_ganar_lvl8=0;
+	cargarImglvl8();
 	cont_perder_lvl5=0;
 	cont_ganar_lvl3=0;
 	cont_perder_lvl3=0;
@@ -905,4 +905,10 @@ function reiniciarNiveles(){
 	$('#marciano2_lvl4').show();
 	$('#edificio_lvl3').show( );
 	$('#arboles_lvl3').show( );
+
+	$('#cofre2N8').show();
+	$('#cofre3N8').show();
+	$('#cofre6N8').show();
+	$('#cofre7N8').show();
+
 }
