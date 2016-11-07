@@ -46,7 +46,7 @@ var cont_logros_estado;
 function init()
 {
 	
-	//cargarInicio();
+	cargarInicio();
 	$('#btn_empezar_inicio').off().on('click',empezar_inicio);
 
 	$('#nino').off().on('click',seleccionarSexo);
@@ -589,12 +589,12 @@ function perder(seccion_actual) {
 
 function empezar_inicio(){
 
-	//window.plugins.NativeAudio.stop( 'empezar' );
-	//window.plugins.NativeAudio.loop( 'fondo' );
+	window.plugins.NativeAudio.stop( 'empezar' );
+	window.plugins.NativeAudio.loop( 'fondo' );
 	botonClick();
 	$('#seccion_inicio').hide();
 	$('#seccion_personajes').show();
-	//window.plugins.NativeAudio.unload( 'empezar' );
+	window.plugins.NativeAudio.unload( 'empezar' );
 }
 function seleccionarSexo(evt){
 
@@ -834,13 +834,13 @@ function empezarNivel8(evt){
 
 
 function botonClick(){
-	//window.plugins.NativeAudio.play( 'click' );
+	window.plugins.NativeAudio.play( 'click' );
 }
-/*function cargarInicio(){
+function cargarInicio(){
 	window.setTimeout( function(){
        window.plugins.NativeAudio.loop( 'empezar' );
     }, 1500 );
-}*/
+}
 
 function mostrarGif(cont){
 	$('#gif_lvls').attr("src",gifs[cont-1]);
