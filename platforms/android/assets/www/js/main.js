@@ -85,7 +85,14 @@ function init()
 	$('#planeta_nivel7').off().on('click',empezarNivel7);
 	$('#planeta_nivel8').off().on('click',empezarNivel8);
 
-
+	
+	$('#btn_gif').off().on('click',llamarConteo);
+	$('#btn_inicio_gif').off().on('click',inicio);
+	$('#btn_logros_gif').off().on('click',logros_seccion);
+	$('#btn_inicio_perdido').off().on('click',inicio);
+	$('#btn_logros_perdido').off().on('click',logros_seccion);
+	$('#btn_inicio_ganar').off().on('click',inicio);
+	$('#btn_logros_ganar').off().on('click',logros_seccion);
 
 
 	var numBtn_ini = $('.btn_inicio').length
@@ -556,7 +563,9 @@ function logro(a){
 	window.plugins.NativeAudio.play( 'ganar' );
 	$('#SuperLogro').attr("src",logros[a-2]);
 	$('#Logro').show();
-	setTimeout(function(){ 
+
+	$('#btn_siguiente_superado').off().on('click',function(){
+		botonClick();
 		$('#Logro').hide();
 		if (a==9) {
 			$('#seccion_menu').show();
@@ -564,7 +573,8 @@ function logro(a){
 		}else{
 			$('#seccion_mapa'+a+'_galaxia1').show();
 		}	
-	}, 3000);
+	});
+
 	cambiarLogroSeccion(a);
 	cont_niveles++;
 }
@@ -581,13 +591,12 @@ function cambiarLogroSeccion(a){
 function perder(seccion_actual) {
 	window.plugins.NativeAudio.play( 'perder' );
 	$('#seccion_perdido').show();
-	setTimeout(function(){ 
+	$('#btn_reintentar').off().on('click',function(){
+		botonClick();
 		$('#seccion_perdido').hide();
 		$('#'+seccion_actual).show();
-	}, 3000);
-
+	});
 }
-
 
 function empezar_inicio(){
 
@@ -847,12 +856,13 @@ function cargarInicio(){
 function mostrarGif(cont){
 	$('#gif_lvls').attr("src",gifs[cont-1]);
 	$('#gif').show();
-	setTimeout(function(){ 
-		$('#gif').hide();
-		conteo(cont);		
-	}, 7000);
-}
 
+}
+function llamarConteo(cont){
+	botonClick();
+	$('#gif').hide();
+	conteo(cont_niveles);
+}
 
 function conteo(cont){
 

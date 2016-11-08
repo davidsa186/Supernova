@@ -503,8 +503,10 @@ body{
 
 #gif_lvls{
     position: absolute;
-    /*top: 10px;*/
-    left: 60px
+    top: 128px;
+    left: 136px;
+    width: 75%;
+    height: 75%;
 }
 
 
@@ -518,4 +520,23 @@ body{
     position: absolute;
     top: 334px;
     left: 926px;
+}
+
+
+#btn_reintentar{
+    position: absolute;
+    top: 593px;
+    left: 926px;
+}
+
+#btn_siguiente_superado{
+    position: absolute;
+    top: 513px;
+    left: 912px;
+}
+
+#btn_gif{
+    position: absolute;
+    top: 676px;
+    left: 1026px;
 }
