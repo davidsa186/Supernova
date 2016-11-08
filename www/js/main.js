@@ -85,7 +85,14 @@ function init()
 	$('#planeta_nivel7').off().on('click',empezarNivel7);
 	$('#planeta_nivel8').off().on('click',empezarNivel8);
 
-
+	
+	
+	// $('#btn_inicio_gif').off().on('click',inicio);
+	// $('#btn_logros_gif').off().on('click',logros_seccion);
+	// $('#btn_inicio_perdido').off().on('click',inicio);
+	// $('#btn_logros_perdido').off().on('click',logros_seccion);
+	// $('#btn_inicio_ganar').off().on('click',inicio);
+	// $('#btn_logros_ganar').off().on('click',logros_seccion);
 
 
 	var numBtn_ini = $('.btn_inicio').length
@@ -585,7 +592,7 @@ function perder(seccion_actual) {
 		$('#seccion_perdido').hide();
 		$('#'+seccion_actual).show();
 	}, 3000);
-
+	
 }
 
 
